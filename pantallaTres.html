@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Vainilla</title>
+    <link rel=stylesheet type="text/css" href="estilos.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div id="izquierda">
+        <form name="nuevosPreguntas">
+            <label for="question">Pregunta</label>
+            <input type="text" id="question" required onKeyup="validarForm()"><br>
+            <label for="verdadero">Verdadero</label>
+            <input type="radio" id="verdadero" name="trueFalse" value="true" required>
+            <label for="falso">Falso</label>
+            <input type="radio" id="falso" name="trueFalse" value="false"><br>
+            <label for="puntuacion">Puntuación</label>
+            <input type="text" id="puntuacion" maxlength="1" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required onKeyup="validarForm();"><br>
+
+            <button type="button" value="Atrás" id="btnSalir" onclick="window.location.href = 'pantallaDos.html'" disabled="disabled">Atrás</button>
+
+            <button type="reset" value="Grabar" id="btnGrabar" onclick="guardarPregunta()" disabled="disabled">Grabar</button>
+        </form>
+    </div>
+    <div id="derecha">
+
+        <p id='showTable'>Cargando preguntas...</p>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script src="./script/common.js" language="javascript" type="text/javascript"></script>
+<script src="./script/scriptTres.js" language="javascript" type="text/javascript"></script>
