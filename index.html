@@ -19,7 +19,7 @@
     <div class="form-group" style="display: none;" id="validE">
 
         <label for="email">Usuario</label>
-        <input type="text" name="email" id="email" onfocusout="validar()" autofocus/>
+        <input type="text" name="email" id="email" onfocusout="validar()" onfocus="this.value = ''" required/>
 
         <span id="msgError"></span>
     </div>
