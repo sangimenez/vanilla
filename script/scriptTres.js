@@ -1,3 +1,5 @@
+/* --------------------------Validamos cuestionario de preguntas-----------------------------------*/
+
 function validarForm() {
     let x = document.forms["nuevosPreguntas"].elements;
     let canSend = true;
@@ -7,7 +9,7 @@ function validarForm() {
 
     if (canSend) {
         document.getElementById('btnSalir').disabled = false;
-        //creamos una promesa para hacer el tiempo de espero de 5 segundos y activar el boton grabar
+        //creamos una promesa para hacer el tiempo de espera de 5 segundos y activar el boton grabar
         let firstPromise = new Promise((resolve, reject) => {
             setTimeout(function() {
                 resolve(document.getElementById('btnGrabar').disabled = false)
@@ -20,7 +22,7 @@ function validarForm() {
     }
 }
 
-
+/* --------------------------GUARDA PREGUNTAS EN LA COOKIE---------------------------------*/
 function guardarPregunta() {
     let email = getCookie('usuario')
     let usuario = JSON.parse(getCookie(email))
@@ -39,6 +41,7 @@ function guardarPregunta() {
     usuario = getCookie(email)
     console.log(usuario)
 }
+/* --------------------------CREAR TABLA A PARTIR DE JSON-----------------------------------*/
 
 function crearTabla(json) {
     var columna = [];
