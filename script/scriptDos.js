@@ -5,28 +5,24 @@ function saludar(usuario) {
 
     let email_cookie = getCookie(email);
     if (!email_cookie) {
-        // console.log('No esta el email guardado');
+        console.info("Primera visita, email no guardado");
         let datos = {
-                user: email,
-                visit: new Date(),
-                preguntas: []
-            }
-            //console.log(datos);
+            user: email,
+            visit: new Date(),
+            preguntas: []
+        }
         setCookie(email, JSON.stringify(datos), 7);
         let user = getCookie(email);
-        // console.log("Usuario", JSON.parse(user))
     } else {
-        // console.log('ya nos has visitado')
+        console.info('Email ya registrado');
         let data = JSON.parse(email_cookie);
         let fecha = new Date(data.visit);
         let options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
         document.getElementById("ultiVisita").innerHTML = `La última vez que entrastes fue el ${fecha.toLocaleDateString("es-ES", options)}`;
     }
-    //console.log(document.cookie)
 }
 
 (function() {
     let usuario = getCookie('usuario');
-    //console.log("Usuario", usuario)
     saludar(usuario);
 })()
