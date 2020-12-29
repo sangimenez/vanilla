@@ -12,7 +12,7 @@ function validarForm() {
         let firstPromise = new Promise((resolve, reject) => {
             setTimeout(function() {
                 resolve(document.getElementById('btnGrabar').disabled = false)
-            }, 2000);
+            }, 5000);
         });
     } else {
         document.getElementById('btnSalir').disabled = 'disabled';

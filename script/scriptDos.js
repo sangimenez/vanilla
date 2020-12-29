@@ -13,6 +13,7 @@ function saludar(usuario) {
         }
         setCookie(email, JSON.stringify(datos), 7);
         let user = getCookie(email);
+        document.getElementById("ultiVisita").innerHTML = 'Bienvenido/a es tu primera visita.';
     } else {
         console.info('Email ya registrado');
         let data = JSON.parse(email_cookie);
