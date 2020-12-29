@@ -1,3 +1,4 @@
+/* ---------------------CREAMOS COOKIE----------------------------*/
 function setCookie(cname, cvalue, exdias) {
     var d = new Date();
     d.setTime(d.getTime() + (exdias * 24 * 60 * 60 * 1000));
@@ -5,6 +6,7 @@ function setCookie(cname, cvalue, exdias) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/ ; SameSite=None; Secure=true; ";
 }
 
+/* ---------------------LEER COOKIE----------------------------*/
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
