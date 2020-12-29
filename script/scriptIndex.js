@@ -33,5 +33,6 @@ function validar() {
 
     } else {
         alert("La dirección de email es incorrecta.");
+
     }
 }

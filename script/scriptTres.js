@@ -11,7 +11,7 @@ function validarForm() {
         let firstPromise = new Promise((resolve, reject) => {
             setTimeout(function() {
                 resolve(document.getElementById('btnGrabar').disabled = false)
-            }, 1000);
+            }, 2000);
         });
 
     } else {
@@ -33,6 +33,7 @@ function guardarPregunta() {
         estado: "ok"
     }
     usuario.preguntas.push(pregunta)
+
     crearTabla(usuario.preguntas)
     setCookie(email, JSON.stringify(usuario), 7)
     usuario = getCookie(email)
@@ -67,8 +68,12 @@ function crearTabla(json) {
     }
     // Añadimos la tabla al elemento contenedor
     var elementShowData = document.getElementById('showTable');
-    elementShowData.innerHTML = "";
-    elementShowData.appendChild(table);
+    //Después de 5 segundos aparecerá la table
+    setTimeout(function() {
+        elementShowData.innerHTML = "";
+        elementShowData.appendChild(table);
+    }, 5000);
+    //deshabilitamos los botones 
     document.getElementById('btnSalir').disabled = 'disabled';
     document.getElementById('btnGrabar').disabled = 'disabled';
 }
